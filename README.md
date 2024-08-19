@@ -33,9 +33,11 @@ This project includes a question-answer system based on Retrieval-Augmented Gene
 4. Docker run -it --rm -p 8000:8000 rag-question-answer-api
 
 
-### API Endpoints
+## Api Endpoints
 
-# Upload PDF
+- URL: /upload_pdf/
+- Method: POST
+- Parameters: url (string): The URL of the PDF file to upload.
 
 
 
