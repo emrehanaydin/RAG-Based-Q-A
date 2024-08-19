@@ -54,5 +54,16 @@ This project includes a question-answer system based on Retrieval-Augmented Gene
 }
 
 
+## Query Embeddings
+
+
+-URL: /query/
+
+-Method: POST
+
+-Parameters:
+query (string): The text to query.
+
+file_id (integer): The ID of the PDF file in the database.
 
 
