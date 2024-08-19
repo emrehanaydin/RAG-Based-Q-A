@@ -75,11 +75,9 @@ file_id (integer): The ID of the PDF file in the database.
 -
 {
    
-   
-   "results": 
+    "results": 
    
    [
-   
         "The main topic is artificial intelligence.",
         
         "The document discusses machine learning techniques.",
