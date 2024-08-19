@@ -97,5 +97,11 @@ file_id (integer): The ID of the PDF file in the database.
 
 -SentenceTransformer: Model used for generating text embeddings.
 
+## Error Handling
+
+-PDF Download Errors: Handled by raising an HTTP 400 error.
+
+-General Errors: Handled by raising an HTTP 500 error.
+
 
 
