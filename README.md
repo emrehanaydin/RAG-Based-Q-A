@@ -90,5 +90,10 @@ file_id (integer): The ID of the PDF file in the database.
 }
 
 
+## Configuration
+-extract_text_from_pdf, chunk_text, normalize_turkish: Helper functions for processing PDF text.
+-get_db_connection, insert_embeddings_into_db: Functions for managing database connections and inserting data.
+-SentenceTransformer: Model used for generating text embeddings.
+
 
 
