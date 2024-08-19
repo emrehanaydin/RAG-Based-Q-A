@@ -38,6 +38,8 @@ This project includes a question-answer system based on Retrieval-Augmented Gene
 - URL: /upload_pdf/
 - Method: POST
 - Parameters: url (string): The URL of the PDF file to upload.
+- Response: message (string): A message indicating the success of the operation.
+            file_id (integer): The ID of the file in the database.
 
 
 
