@@ -66,4 +66,22 @@ query (string): The text to query.
 
 file_id (integer): The ID of the PDF file in the database.
 
+## Example URL
+
+- curl -X POST "http://localhost:8000/query/" -H "Content-Type: application/json" -d '{"query": "What is the main topic of the PDF?", "file_id": 123}'
+
+## Example Response
+
+-{
+    "results": [
+        "The main topic is artificial intelligence.",
+        "The document discusses machine learning techniques.",
+        "Detailed explanation of neural networks.",
+        "Overview of AI applications in various fields.",
+        "Future trends in artificial intelligence."
+    ]
+}
+
+
+
 
