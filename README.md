@@ -1,4 +1,4 @@
-docker run -it --rm -p 8000:8000 rag-question-answer-api
+### RAG-Based Question and Answer
 
 This project includes a question-answer system based on Retrieval-Augmented Generation (RAG). The project uses natural language processing (NLP) methods to answer questions posed based on specific data settings.
 
