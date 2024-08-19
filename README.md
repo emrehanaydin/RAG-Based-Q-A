@@ -35,9 +35,7 @@ This project includes a question-answer system based on Retrieval-Augmented Gene
 
 ### API Endpoints
 
-## Upload PDF
+# Upload PDF
 
--URL: /upload_pdf/
--Method: POST
 
 
