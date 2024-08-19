@@ -1,27 +1,107 @@
-# RAG-Based Question and Answer
+### RAG-Based Question and Answer
 
-Bu proje, Retrieval-Augmented Generation (RAG) tabanlı bir soru-cevap sistemini içerir. Proje, belirli bir veri kümesine dayalı olarak kullanıcının sorduğu sorulara yanıt vermek için doğal dil işleme (NLP) yöntemlerini kullanır.
+This project includes a question-answer system based on Retrieval-Augmented Generation (RAG). The project uses natural language processing (NLP) methods to answer questions posed based on specific data settings.
 
-## Özellikler
+## Features
 
-- PDF belgelerini yükleyip işleyebilir.
-- İçeriği analiz ederek anlamlı yanıtlar üretir.
-- PostgresQL veritabanı kullanarak gömülü metinleri indeksler.
+- Can load and process PDF documents.
+- Generates meaningful answers by analyzing the content.
+- Indexes embedded texts using PostgresQL database.
 
-## Başlarken
 
-### Gereksinimler
+## Getting Started
 
-- Python 3.8 veya daha yeni bir sürümü
-- Docker
+### Requirements
 
-### Kurulum
+- Python 3.8 or newer
+– Docker
 
-#### Sanal Ortam
+### Setup
 
-1. Python sanal ortamını oluşturun ve etkinleştirin:
+#### Virtual Environment
+
+1. Create and activate the Python virtual environment:
 
    ```bash
    python3 -m venv venv
    source venv/bin/activate
+
+2. Pip install -r requirements.txt
+
+3. Docker build -t rag-question-answer-api .
+
+4. Docker run -it --rm -p 8000:8000 rag-question-answer-api
+
+
+## Api Endpoints
+
+- URL: /upload_pdf/
+- Method: POST
+- Parameters: url (string): The URL of the PDF file to upload.
+- Response: message (string): A message indicating the success of the operation.
+
+  file_id (integer): The ID of the file in the database.
+
+## Example URL
+
+-curl -X POST "http://localhost:8000/upload_pdf/" -H "Content-Type: application/json" -d '{"url": "https://example.com/sample.pdf"}'
+
+## Example Response
+
+{
+    "message": "PDF uploaded and embeddings inserted successfully",
+    "file_id": 123
+}
+
+
+## Query Embeddings
+
+
+-URL: /query/
+
+-Method: POST
+
+-Parameters:
+query (string): The text to query.
+
+file_id (integer): The ID of the PDF file in the database.
+
+## Example URL
+
+- curl -X POST "http://localhost:8000/query/" -H "Content-Type: application/json" -d '{"query": "What is the main topic of the PDF?", "file_id": 123}'
+
+## Example Response
+
+{
+    "results": 
+   
+   [
+
+        "The main topic is artificial intelligence.",
+        
+        "The document discusses machine learning techniques.",
+        
+        "Detailed explanation of neural networks.",
+        
+        "Overview of AI applications in various fields.",
+        
+        "Future trends in artificial intelligence."
+    ]
+}
+
+
+## Configuration
+-extract_text_from_pdf, chunk_text, normalize_turkish: Helper functions for processing PDF text.
+
+-get_db_connection, insert_embeddings_into_db: Functions for managing database connections and inserting data.
+
+-SentenceTransformer: Model used for generating text embeddings.
+
+## Error Handling
+
+-PDF Download Errors: Handled by raising an HTTP 400 error.
+
+-General Errors: Handled by raising an HTTP 500 error.
+
+
 
