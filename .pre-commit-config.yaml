@@ -1,0 +1,17 @@
+repos:
+  - repo: local
+    hooks:
+      - id: flake8-foo
+        name: Run flake8 in foo package
+        entry: bash -c "cd foo && flake8"
+        language: python
+        pass_filenames: false
+        files: ^foo/
+        types: [python]
+      - id: flake8-bar
+        name: Run flake8 in bar package
+        entry: bash -c "cd bar && flake8"
+        language: python
+        pass_filenames: false
+        files: ^bar/
+        types: [python]
