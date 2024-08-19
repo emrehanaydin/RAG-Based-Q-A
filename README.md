@@ -39,7 +39,12 @@ This project includes a question-answer system based on Retrieval-Augmented Gene
 - Method: POST
 - Parameters: url (string): The URL of the PDF file to upload.
 - Response: message (string): A message indicating the success of the operation.
+
   file_id (integer): The ID of the file in the database.
+
+## Example URL
+
+-curl -X POST "http://localhost:8000/upload_pdf/" -H "Content-Type: application/json" -d '{"url": "https://example.com/sample.pdf"}'
 
 
 
