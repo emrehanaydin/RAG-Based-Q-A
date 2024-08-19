@@ -1,4 +1,4 @@
-# Python 3.9 kullanan bir imajı kullan
+# Python 3.8 kullanan bir imajı kullan
 FROM python:3.8.2
 
 # Çalışma dizinini /code olarak ayarla
