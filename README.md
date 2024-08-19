@@ -46,5 +46,13 @@ This project includes a question-answer system based on Retrieval-Augmented Gene
 
 -curl -X POST "http://localhost:8000/upload_pdf/" -H "Content-Type: application/json" -d '{"url": "https://example.com/sample.pdf"}'
 
+## Example Response
+
+{
+    "message": "PDF uploaded and embeddings inserted successfully",
+    "file_id": 123
+}
+
+
 
 
